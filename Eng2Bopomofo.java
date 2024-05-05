@@ -65,7 +65,7 @@ public class Eng2Bopomofo {
             System.out.println("Output: " + outputData);
         } catch (IOException e) {
             System.out.println("An error occurred.");
-            e.printStackTrace();
+            System.out.println(e);
         }
     }
 }
