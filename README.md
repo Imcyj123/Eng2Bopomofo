@@ -1,4 +1,4 @@
-![GitHub](https://img.shields.io/github/license/Imcyj123/Eng2Bopomofo)
+[![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 # Eng2Bopomofo (英文輸入➜注音轉換器)
 
