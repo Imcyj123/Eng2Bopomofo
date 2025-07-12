@@ -45,7 +45,9 @@
     ```bash
     # 將 <您的專案絕對路徑> 替換成您電腦上 Eng2Bopomofo 資料夾的完整路徑
     # 例如： D:\projects\Eng2Bopomofo
-    docker run --rm -v "<您的專案絕對路徑>\data:/app/data" eng2bopomofo:latest java Eng2Bopomofo data/input.txt data/output.txt
+    # docker run --rm -v "<您的專案絕對路徑>\data:/app/data" eng2bopomofo:latest java Eng2Bopomofo data/input.txt data/output.txt
+    docker run --rm -v "<您的專案絕對路徑>\data:/app/data" eng2bopomofo:latest data/input.txt data/output.txt
+
     ```
     > **提示**:
     > * 在 Windows 上，您可以在檔案總管的位址列複製路徑。
@@ -56,8 +58,6 @@
 ## 🛠️ 專案結構
 ```
 Eng2Bopomofo/
-├── .github/            
-│   └── workflows/
 ├── data/               # 存放輸入與輸出檔案
 │   └── input.txt
 ├── src/                # Java 原始碼
