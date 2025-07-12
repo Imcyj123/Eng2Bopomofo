@@ -48,7 +48,7 @@ c9 su3cl3` 轉換為 `ㄏㄞ ㄋㄧˇㄏㄠˇ`。
     # 將 <您的專案絕對路徑> 替換成您電腦上 Eng2Bopomofo 資料夾的完整路徑
     # 例如： D:\projects\Eng2Bopomofo
     # docker run --rm -v "<您的專案絕對路徑>\data:/app/data" eng2bopomofo:latest java Eng2Bopomofo data/input.txt data/output.txt
-    docker run --rm -v "<您的專案絕對路徑>\data:/app/data" eng2bopomofo:latest data/input.txt data/output.txt
+    docker run --rm -v "<您的專案絕對路徑>\data:/app/data" eng2bopomofo:latest 
 
     ```
     > **提示**:
