@@ -52,7 +52,7 @@
     執行完畢後，您會在 `data` 資料夾中看到一個名為 `output.txt` 的新檔案，裡面就是轉換後的結果！
 
 ## 🛠️ 專案結構
-
+```
 Eng2Bopomofo/
 ├── .github/            
 │   └── workflows/
@@ -63,3 +63,4 @@ Eng2Bopomofo/
 ├── .dockerignore       # 告訴 Docker 忽略哪些檔案
 ├── Dockerfile          # Docker 建置設定檔
 └── README.md           # 就是您現在看到的這個檔案
+```
