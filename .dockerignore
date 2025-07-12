@@ -1,0 +1,16 @@
+# Git
+.git
+.gitignore
+
+# Docker
+.dockerignore
+Dockerfile
+
+# Java build output
+*.class
+target/
+
+# IDE files
+.idea/
+.vscode/
+*.iml
