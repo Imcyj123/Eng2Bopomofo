@@ -1,4 +1,4 @@
-![GitHub](https://img.shields.io/github/license/Imcyj123/Eng2Bopomofo)
+![GitHub](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 
 # Eng2Bopomofo (英文輸入➜注音轉換器)
 
