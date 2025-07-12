@@ -1,3 +1,5 @@
+![GitHub](https://img.shields.io/github/license/Imcyj123/Eng2Bopomofo)
+
 # Eng2Bopomofo (英文輸入➜注音轉換器)
 
 這是一個簡單的 Java 專案，可以將包含英數鍵盤對應的文字檔案，轉換為相對應的注音符號。例如，它會將 `hi,4cl3` 轉換為 `ㄏㄞˊ，ˋㄠˇ`。
