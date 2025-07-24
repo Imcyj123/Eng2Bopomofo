@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 # Eng2Bopomofo (英文輸入➜注音轉換器)
@@ -69,7 +68,3 @@ Eng2Bopomofo/
 ├── Dockerfile          # Docker 建置設定檔
 └── README.md           # 就是您現在看到的這個檔案
 ```
-=======
-# Eng2Bopomofo
-just test
->>>>>>> 45bce660a75efd51a748b6dff5ad645a68364e7e
