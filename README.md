@@ -65,13 +65,3 @@ c9 su3cl3` 轉換為 `ㄏㄞ ㄋㄧˇㄏㄠˇ`。
 
 
 ## 🛠️ 專案結構
-```
-Eng2Bopomofo/
-├── data/               # 存放輸入與輸出檔案
-│   └── input.txt
-├── src/                # Java 原始碼
-│   └── Eng2Bopomofo.java
-├── .dockerignore       # 告訴 Docker 忽略哪些檔案
-├── Dockerfile          # Docker 建置設定檔
-└── README.md           # 就是您現在看到的這個檔案
-```
