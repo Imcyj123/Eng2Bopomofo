@@ -53,14 +53,20 @@ docker run --rm -v "$(pwd)/data:/app/data" imcyj123/eng2bopomofo_file:v1.0
 
 
 ## 📂 專案結構
-```Text
+
+```text
 Eng2Bopomofo/
-├── data/               # 存放輸入與輸出檔案
-│   ├── input.txt       # 放置來源文字 (UTF-8)
-│   └── output.txt      # 轉換後的結果
-├── src/                # Java 原始碼
-│   └── Eng2Bopomofo.java
-├── Dockerfile          # 多階段環境建置檔
-├── .dockerignore       # 排除不必要的檔案
-└── README.md           # 本說明文件
-```
+├── file-mode/              # 📂 檔案處理模式
+│   ├── data/               # 存放輸入與輸出檔案
+│   │   ├── input.txt       # 來源文字 (UTF-8)
+│   │   └── output.txt      # 轉換後的結果
+│   ├── src/                # Java 原始碼
+│   │   └── Eng2Bopomofo.java
+│   ├── Dockerfile          # 文件版專屬 Docker 設定
+│   └── .dockerignore       # 排除不必要的編譯暫存檔
+├── cmd-mode/               # 💬 CMD 互動模式
+│   ├── src/                # Java 原始碼
+│   │   └── Main.java
+│   ├── Dockerfile          # 互動版專屬 Docker 設定
+│   └── .dockerignore       # 排除不必要的編譯暫存檔
+└── README.md               # 📖 專案說明文件 (您正在閱讀這份文件)
