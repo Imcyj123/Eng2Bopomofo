@@ -57,6 +57,13 @@ c9 su3cl3` 轉換為 `ㄏㄞ ㄋㄧˇㄏㄠˇ`。
 
     執行完畢後，您會在 `data` 資料夾中看到一個名為 `output.txt` 的新檔案，裡面就是轉換後的結果！
 
+
+5. **可以pull image from docker hub**
+    ```bash
+    docker run --rm -v "<您的專案絕對路徑>\data:/app/data" imcyj123/eng2bopomofo:v1.0
+    ```
+
+
 ## 🛠️ 專案結構
 ```
 Eng2Bopomofo/
