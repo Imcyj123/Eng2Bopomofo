@@ -1,67 +1,66 @@
 [![License MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Docker Ready](https://img.shields.io/badge/docker-ready-blue?logo=docker)](https://hub.docker.com/r/imcyj123/eng2bopomofo)
+![Java](https://img.shields.io/badge/Java-17+-orange?logo=openjdk)
 
-# Eng2Bopomofo (英文輸入➜注音轉換器)
+# Eng2Bopomofo (英文輸入 ➜ 注音轉換器)
 
-這是一個簡單的 Java 專案，可以將包含英數鍵盤對應的文字檔案，轉換為相對應的注音符號。例如，它會將 `
-c9 su3cl3` 轉換為 `ㄏㄞ ㄋㄧˇㄏㄠˇ`。
+這是一個輕量級的 Java 工具，專門將「英數鍵盤對應序列」轉換為相對應的「注音符號」。  
+當您忘記切換輸入法而打出一串亂碼時（例如：`c9 su3cl3`），本工具能協助將其還原為注音（`ㄏㄞ ㄋㄧˇㄏㄠˇ`）。
 
+本專案已完全 **容器化 (Containerized)**。您無需安裝任何 Java 環境，只要有 Docker，即可實現跨平台一鍵執行。
 
-此專案已完全容器化，您只需要安裝 Docker，即可在任何環境下輕鬆建置與執行。
+---
 
-## ✨ 功能
+## ✨ 核心功能
 
-* 讀取一個 UTF-8 編碼的輸入檔案。
-* 將檔案內容根據注音符號鍵盤對應表進行轉換。
-* 將轉換後的結果寫入一個新的輸出檔案。
+*   **💬 互動模式 (Interactive)**：在終端機輸入英文，即時轉換。
+*   **📂 檔案模式 (Batch File)**：讀取 `input.txt` 並輸出轉換結果至 `output.txt`。
+*   **🐳 Docker 全支援**：支援本機 `build` 或直接拉取 Docker Hub 映像檔。
+
+---
 
 ## 🚀 快速開始 (使用 Docker)
 
-您不需要在您的電腦上安裝 Java 環境，只需要安裝 [Docker Desktop](https://www.docker.com/products/docker-desktop/) 即可。
+無需下載原始碼，確保 [Docker Desktop](https://www.docker.com/products/docker-desktop/) 已啟動後，依需求選擇模式：
 
-1.  **複製 (Clone) 專案**
+### 模式 A：互動模式 (CMD Mode)
+適用於單句測試。執行後直接輸入英文按 Enter 即可：
+1. 操作：直接輸入英文（如 1qaz），按下 Enter 即可看到注音結果。
+2. 退出：輸入 exit 或按下 Ctrl+C。
+```bash
+docker run -it --rm imcyj123/eng2bopomofo_cmd:v1.0
+```
 
-    首先，將此專案複製到您的本機電腦：
-    ```bash
-    git clone [https://github.com/Imcyj123/Eng2Bopomofo.git](https://github.com/Imcyj123/Eng2Bopomofo.git)
-    cd Eng2Bopomofo
-    ```
+### 模式 B：檔案批次模式 (File Mode)
+1. 請確保 data/input.txt 已填入內容，然後執行
+2. 查看結果：轉換後的文字將儲存在 `data/output.txt` 中。
 
-2.  **準備輸入檔案**
+#### Windows (PowerShell):
+```Powershell
+docker run --rm -v "${PWD}/data:/app/data" imcyj123/eng2bopomofo_file:v1.0
+```
 
-    在專案根目錄下的 `data` 資料夾中，有一個 `input.txt` 檔案。請將您想要轉換的內容填寫進去。
-    ```
-    /data
-    └── input.txt
-    ```
+#### Windows (CMD):
+```Cmd
+docker run --rm -v "%cd%/data:/app/data" imcyj123/eng2bopomofo_file:v1.0
+```
 
-3.  **建置 Docker 映像檔 (Build)**
-
-    在專案根目錄下，執行以下指令來建置 Docker image：
-    ```bash
-    docker build -t eng2bopomofo:latest .
-    ```
-
-4.  **執行轉換程式 (Run)**
-
-    執行以下指令來啟動容器並進行轉換。此指令會將您本機的 `data` 資料夾掛載到容器中，讓程式可以讀取 `input.txt` 並產生 `output.txt`。
-    ```bash
-    # 將 <您的專案絕對路徑> 替換成您電腦上 Eng2Bopomofo 資料夾的完整路徑
-    # 例如： D:\projects\Eng2Bopomofo
-    # docker run --rm -v "<您的專案絕對路徑>\data:/app/data" eng2bopomofo:latest java Eng2Bopomofo data/input.txt data/output.txt
-    docker run --rm -v "<您的專案絕對路徑>\data:/app/data" eng2bopomofo:latest 
-
-    ```
-    > **提示**:
-    > * 在 Windows 上，您可以在檔案總管的位址列複製路徑。
-    > * 在 Mac 或 Linux 上，路徑格式應為 `/path/to/your/project`。
-
-    執行完畢後，您會在 `data` 資料夾中看到一個名為 `output.txt` 的新檔案，裡面就是轉換後的結果！
+#### Mac / Linux:
+```Bash
+docker run --rm -v "$(pwd)/data:/app/data" imcyj123/eng2bopomofo_file:v1.0
+```
 
 
-5. **可以pull image from docker hub**
-    ```bash
-    docker run --rm -v "<您的專案絕對路徑>\data:/app/data" imcyj123/eng2bopomofo:v1.0
-    ```
 
-
-## 🛠️ 專案結構
+## 📂 專案結構
+```Text
+Eng2Bopomofo/
+├── data/               # 存放輸入與輸出檔案
+│   ├── input.txt       # 放置來源文字 (UTF-8)
+│   └── output.txt      # 轉換後的結果
+├── src/                # Java 原始碼
+│   └── Eng2Bopomofo.java
+├── Dockerfile          # 多階段環境建置檔
+├── .dockerignore       # 排除不必要的檔案
+└── README.md           # 本說明文件
+```
